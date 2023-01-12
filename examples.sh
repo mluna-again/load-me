@@ -1,10 +1,14 @@
 #! /bin/sh
 
-loaders="./bar.sh"
+loaders="./bar.sh ./rocket.sh"
 
-for loader in $loaders; do
-	for i in $(seq 0 10); do
+for i in $(seq 0 10); do
+	clear
+
+	for loader in $loaders; do
 		source $loader $i 10
-		sleep 0.3
+		echo
 	done
+
+	sleep 0.3
 done
